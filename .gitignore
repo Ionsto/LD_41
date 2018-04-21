@@ -77,3 +77,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+*.log
+LD_41/x64/Debug/vc141.idb
+*.pdb
+*.tlog
+*.idb
