@@ -1,5 +1,5 @@
 #include "World.h"
-
+#include "EntityCar.h"
 
 
 World::World()
@@ -7,9 +7,8 @@ World::World()
 	PhysicalWorld = std::make_unique<b2World>(b2Vec2(0, 0));
 	InitGame();
 }
-void World::InitGame()
-{
-
+void World::InitGame(){
+	AddEntity(std::make_unique<EntityCar>(this));
 }
 
 World::~World()
@@ -25,8 +24,8 @@ int World::AddEntity(std::unique_ptr<Entity> newentity)
 		{
 			newentity->Id = id;
 			EntityList[id] = std::move(newentity);
-			if (id > HighestEntityLocation){
-				HighestEntityLocation = id;
+			if (id <= HighestEntityLocation){
+				HighestEntityLocation = id+1;
 			}
 			return id;
 		}
@@ -40,7 +39,7 @@ void World::Update()
 void World::UpdatePhysics()
 {
 	PhysicalWorld->Step(DeltaTime, 5, 5);
-	for (int i = 0; i <= HighestEntityLocation; ++i)
+	for (int i = 0; i < HighestEntityLocation; ++i)
 	{
 		if (EntityList[i])
 		{
@@ -53,7 +52,7 @@ void World::UpdatePhysics()
 }
 void World::UpdateEntity()
 {
-	for (int i = 0; i <= HighestEntityLocation; ++i)
+	for (int i = 0; i < HighestEntityLocation; ++i)
 	{
 		if (EntityList[i])
 		{

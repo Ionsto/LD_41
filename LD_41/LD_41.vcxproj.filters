@@ -34,6 +34,9 @@
     <Filter Include="Source Files\System\Render">
       <UniqueIdentifier>{072d015c-c617-46a8-a91c-a380dcf9c943}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\System\Render">
+      <UniqueIdentifier>{194a6cf1-f76f-4ae5-9d6c-ff888a8103b4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KeyState.cpp">
@@ -70,7 +73,7 @@
       <Filter>Source Files\System\Render</Filter>
     </ClCompile>
     <ClCompile Include="TexturedSprite.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\System\Render</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -92,9 +95,6 @@
     <ClInclude Include="MouseState.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
-    <ClInclude Include="RenderWorld.h">
-      <Filter>Header Files\System</Filter>
-    </ClInclude>
     <ClInclude Include="GuiManager.h">
       <Filter>Header Files\System\GUI</Filter>
     </ClInclude>
@@ -105,7 +105,10 @@
       <Filter>Header Files\System\GUI</Filter>
     </ClInclude>
     <ClInclude Include="TexturedSprite.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\System\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderWorld.h">
+      <Filter>Header Files\System\Render</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

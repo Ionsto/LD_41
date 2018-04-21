@@ -6,6 +6,7 @@ GameManager::GameManager()
 	InitVideo();
 	//Debug
 	State = GameState::Game;
+	WorldInstance = std::make_unique<World>();
 }
 
 
@@ -18,7 +19,7 @@ void GameManager::InitVideo(){
 	//Utilise unique ptr so we don't realoc if I make multiple gms
 	Gui = std::make_unique<GuiManager>();
 	//Window.create(sf::VideoMode::getFullscreenModes()[0], "Wolf hunt SP", sf::Style::Fullscreen);
-	RenderEngine = std::make_unique<RenderWorld>();
+	RenderEngine = std::make_unique<RenderWorld>(&Window);
 	Running = true;
 	Mouse = MouseState();
 	Window.setKeyRepeatEnabled(false);

@@ -4,6 +4,7 @@
 
 EntityCar::EntityCar(World * world) : Entity()
 {
+	Type = EntityType::Ambulence;
 	WorldRef = world;
 	if (world) {
 		CreateCarBody(world->PhysicalWorld.get());
