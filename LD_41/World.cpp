@@ -5,8 +5,12 @@
 World::World()
 {
 	PhysicalWorld = std::make_unique<b2World>(b2Vec2(0, 0));
+	InitGame();
 }
+void World::InitGame()
+{
 
+}
 
 World::~World()
 {

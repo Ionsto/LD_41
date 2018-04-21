@@ -25,6 +25,15 @@
     <Filter Include="Header Files\System">
       <UniqueIdentifier>{09a1a266-c508-43cf-9ccd-df197b6b28e1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\System\GUI">
+      <UniqueIdentifier>{e3dd1cc2-bbf7-4c7e-b72a-7f4056b503c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\System\GUI">
+      <UniqueIdentifier>{a3d5c737-6c5f-4b66-b383-ce14fd51ef8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\System\Render">
+      <UniqueIdentifier>{072d015c-c617-46a8-a91c-a380dcf9c943}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KeyState.cpp">
@@ -34,12 +43,6 @@
       <Filter>Source Files\System</Filter>
     </ClCompile>
     <ClCompile Include="MouseState.cpp">
-      <Filter>Source Files\System</Filter>
-    </ClCompile>
-    <ClCompile Include="RenderWorld.cpp">
-      <Filter>Source Files\System</Filter>
-    </ClCompile>
-    <ClCompile Include="GuiManager.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
     <ClCompile Include="GameManager.cpp">
@@ -53,6 +56,21 @@
     </ClCompile>
     <ClCompile Include="World.cpp">
       <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiManager.cpp">
+      <Filter>Source Files\System\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiMainMenu.cpp">
+      <Filter>Source Files\System\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiTemplate.cpp">
+      <Filter>Source Files\System\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderWorld.cpp">
+      <Filter>Source Files\System\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="TexturedSprite.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -68,9 +86,6 @@
     <ClInclude Include="GameManager.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
-    <ClInclude Include="GuiManager.h">
-      <Filter>Header Files\System</Filter>
-    </ClInclude>
     <ClInclude Include="KeyState.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
@@ -79,6 +94,18 @@
     </ClInclude>
     <ClInclude Include="RenderWorld.h">
       <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiManager.h">
+      <Filter>Header Files\System\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiMainMenu.h">
+      <Filter>Header Files\System\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiTemplate.h">
+      <Filter>Header Files\System\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="TexturedSprite.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

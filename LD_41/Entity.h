@@ -14,6 +14,14 @@ protected:
 	b2Body * Body = nullptr;
 	World * WorldRef = nullptr;
 public:
+	//Fastest reflection system you can do :/
+	enum EntityType {
+		Other,
+		Person,
+		Accident,
+		Car,
+		Ambulence
+	}Type;
 	//Probably should use a class ID -> no weird issues
 	int Id = -1;
 	bool Alive = true;

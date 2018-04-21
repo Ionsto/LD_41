@@ -4,6 +4,8 @@
 GameManager::GameManager()
 {
 	InitVideo();
+	//Debug
+	State = GameState::Game;
 }
 
 
@@ -13,6 +15,7 @@ GameManager::~GameManager()
 void GameManager::InitVideo(){
 	//CurrentGame = std::make_unique<GameInstance>();
 	Window.create(sf::VideoMode(1000, 1000), "Need for a parmedic");
+	//Utilise unique ptr so we don't realoc if I make multiple gms
 	Gui = std::make_unique<GuiManager>();
 	//Window.create(sf::VideoMode::getFullscreenModes()[0], "Wolf hunt SP", sf::Style::Fullscreen);
 	RenderEngine = std::make_unique<RenderWorld>();
@@ -39,22 +42,30 @@ void GameManager::MainLoop() {
 	}
 }
 void GameManager::Update(){
-	//Constant timestep with variable wall clock step speed ;)
-	for (int i = 0; TimeDifference >= World::DeltaTime; TimeDifference -= World::DeltaTime)
-	{
-		WorldInstance->Update();
-		//UpdateCamera();
+	switch (State) {
+	case Game:
+		for (int i = 0; TimeDifference >= World::DeltaTime; TimeDifference -= World::DeltaTime)
+		{
+			WorldInstance->Update();
+			//UpdateCamera();
+		}
+		break;
 	}
 	Gui->Update(DeltaTime);
-	//GameHud.Update();
 }
 
 void GameManager::Render()
 {
 	Window.clear();
-	//->Render(CurrentGame.get(), &Window);
-	//GameHud.Render(&Window);
-	Gui->Render(Window);
+	switch (State) {
+	case Game:
+		RenderEngine->Render(*WorldInstance.get());
+		break;
+	case Menu:
+	case Paused:
+		Gui->Render(Window);
+		break;
+	}
 	Window.display();
 }
 void GameManager::PollInputs(){

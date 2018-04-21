@@ -1,16 +1,20 @@
 #pragma once
 
 #include <SFGUI\SFGUI.hpp>
-#include <SFGUI\Desktop.hpp>
-#include <SFGUI\Window.hpp>
+#include "GuiMainMenu.h"
 class GuiManager
 {
 private:
-	std::shared_ptr<sfg::Button> testbutton;
+	sf::Vector2f WindowSize = sf::Vector2f(1000,1000);
+	/*
+	Main menu
+	*/
+	std::shared_ptr<sfg::Button> ButtonStart;
+	std::shared_ptr<sfg::Button> ButtonHelp;
+	std::shared_ptr<sfg::Button> ButtonExit;
 public:
 	sfg::SFGUI sfgui;
-	sfg::Desktop GuiDesktop;
-	std::shared_ptr<sfg::Window> GuiWindow;
+	std::unique_ptr<GuiTemplate> Menu;
 	GuiManager();
 	~GuiManager();
 	//Probably stuff in some control systems

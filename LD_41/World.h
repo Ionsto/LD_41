@@ -6,10 +6,15 @@
 /*
 A world is one game instance -> controls player state as well as general world info
 */
+struct PlayerInfo {
+	float Score = 0;
+	int PlayerId = 0;
+	//Idk add some more things in here
+};
 class World
 {
-
 public:
+	PlayerInfo player;
 	static constexpr float DeltaTime = 1.0 / 60.0;
 	std::unique_ptr<b2World> PhysicalWorld;
 	static constexpr int MaxEntityCount = 1000;
@@ -22,6 +27,7 @@ public:
 	std::array<std::unique_ptr<Entity>, MaxEntityCount> EntityList;
 	World();
 	~World();
+	void InitGame();
 	void Update();
 	void UpdatePhysics();
 	void UpdateEntity();

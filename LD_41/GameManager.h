@@ -18,6 +18,11 @@ private:
 	MouseState Mouse;
 	std::array<KeyState, 255> KeyArray;
 	float DeltaTime = 0;
+	enum GameState {
+		Menu,
+		Game,
+		Paused
+	} State;
 public:
 	sf::RenderWindow Window;
 	std::unique_ptr<GuiManager> Gui;
