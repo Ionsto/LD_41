@@ -8,7 +8,8 @@ protected:
 	float32 SteerAngle = 0;
 	float32 SteerForce = 10;
 public:
-	EntityCar();
+	EntityCar(World * world = nullptr);
 	virtual ~EntityCar();
+	void CreateCarBody(b2World * world);
 };
 

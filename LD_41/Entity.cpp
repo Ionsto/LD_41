@@ -9,17 +9,16 @@ Entity::Entity()
 
 Entity::~Entity()
 {
+
 }
 
 void Entity::Update()
 {
-	UpdatePhysics();
+	if (Body) {
+		UpdatePhysics();
+	}
 }
 
-void Entity::UpdatePhysics()
-{
-
-}
 
 void Entity::UpdatePhysics()
 {
@@ -30,5 +29,7 @@ void Entity::UpdatePhysics()
 void Entity::SetPosition(b2Vec2 pos)
 {
 	Pos = pos;
-	Body->SetTransform(pos, Body->GetAngle());
+	if (Body) {
+		Body->SetTransform(pos, Body->GetAngle());
+	}
 }
