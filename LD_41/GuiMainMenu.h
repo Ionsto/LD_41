@@ -8,6 +8,7 @@ private:
 	std::shared_ptr<sfg::Button> ButtonExit;
 	std::shared_ptr<sfg::Label> Title;
 	std::shared_ptr<sfg::Label> Credits;
+	std::vector<std::shared_ptr<sfg::Label>> Hints;
 public:
 	enum MoveState {
 		None,
@@ -20,5 +21,6 @@ public:
 	void ButtonClickHelp();
 	void MoveToDefaultPosition();
 	void MoveToHelpPosition();
+	void RemoveHelp();
 };
 

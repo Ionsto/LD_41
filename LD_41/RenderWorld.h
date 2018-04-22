@@ -12,9 +12,12 @@ private:
 	sf::CircleShape Marker;
 	std::unique_ptr<sf::RectangleShape> BackGround;
 	std::unique_ptr<TexturedSprite> Ambulance;//canae spell
+	std::unique_ptr<TexturedSprite> AmbulanceLeft;//canae spell
+	std::unique_ptr<TexturedSprite> AmbulanceRight;//canae spell
 	std::unique_ptr<TexturedSprite> RoadSprite;
 	std::unique_ptr<TexturedSprite> OuterRoadSprite;
 	std::unique_ptr<TexturedSprite> HospitalSprite;
+	std::unique_ptr<TexturedSprite> CornerSprite;
 	std::vector<std::unique_ptr<TexturedSprite>> Cars;//grab these guys oof
 	std::vector<std::unique_ptr<TexturedSprite>> Buildings;//grab these guys oof
 	TexturedSprite Road;//canae spell

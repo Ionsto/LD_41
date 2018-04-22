@@ -22,10 +22,14 @@ RenderWorld::~RenderWorld(){
 
 //Grab all our resources & stick them onto our sprites
 void RenderWorld::InitRes(){
+	//Bad idea
 	Ambulance = std::make_unique<TexturedSprite>("./Resources/Images/Ambulance.png", sf::Vector2f(Scale * 2 * 1.5 / 672.0, Scale * 2 * 3.744 / 1544.0));
+	AmbulanceLeft = std::make_unique<TexturedSprite>("./Resources/Images/AmbulanceLeft.png", sf::Vector2f(Scale * 2 * 1.5 / 672.0, Scale * 2 * 3.744 / 1544.0));
+	AmbulanceRight = std::make_unique<TexturedSprite>("./Resources/Images/AmbulanceRight.png", sf::Vector2f(Scale * 2 * 1.5 / 672.0, Scale * 2 * 3.744 / 1544.0));
 	RoadSprite = std::make_unique<TexturedSprite>("./Resources/Images/BlockRoad.png", sf::Vector2f((World::BlockSize + World::RoadWidth), (World::BlockSize + World::RoadWidth))*(Scale / 900.0f));
 	OuterRoadSprite = std::make_unique<TexturedSprite>("./Resources/Images/OuterRoad.png", sf::Vector2f((World::BlockSize + World::RoadWidth)/900.0f, 0.5*World::RoadWidth / 200.0f)*Scale);
-	HospitalSprite = std::make_unique<TexturedSprite>("./Resources/Images/Hospital.png", sf::Vector2f(World::RoadWidth/2, World::RoadWidth/2)*(Scale/1800.0f));
+	HospitalSprite = std::make_unique<TexturedSprite>("./Resources/Images/Hospital.png", sf::Vector2f(World::RoadWidth / 2, World::RoadWidth / 2)*(Scale / 1800.0f));
+	CornerSprite = std::make_unique<TexturedSprite>("./Resources/Images/Corner.png", sf::Vector2f(World::RoadWidth / 2, World::RoadWidth / 2)*(Scale / 1800.0f));
 	for (int i = 0; i < 2; ++i) {
 		Buildings.emplace_back(std::make_unique<TexturedSprite>("./Resources/Images/Building" + std::to_string(i) + ".png", sf::Vector2f(Scale * 10.0 / 1800.0, Scale * 10.0 / 1800.0)));
 	}
@@ -81,7 +85,15 @@ void RenderWorld::RenderNodes(World &const world) {
 void RenderWorld::RenderEntity(Entity &const entity) {
 	switch(entity.Type){
 	case Entity::EntityType::Ambulence:
-		Ambulance->Render(*window, ((sf::Vector2f(entity.Pos.x, entity.Pos.y))*Scale), entity.Rotation);
+		if (static_cast<EntityAmbulance&const>(entity).SteerAngle == 0) {
+			Ambulance->Render(*window, ((sf::Vector2f(entity.Pos.x, entity.Pos.y))*Scale), entity.Rotation);
+		}
+		if (static_cast<EntityAmbulance&const>(entity).SteerAngle < 0) {
+			AmbulanceLeft->Render(*window, ((sf::Vector2f(entity.Pos.x, entity.Pos.y))*Scale), entity.Rotation);
+		}
+		if (static_cast<EntityAmbulance&const>(entity).SteerAngle > 0) {
+			AmbulanceRight->Render(*window, ((sf::Vector2f(entity.Pos.x, entity.Pos.y))*Scale), entity.Rotation);
+		}
 		break;
 	case Entity::EntityType::Building:
 		Buildings[entity.Id%Buildings.size()]->Render(*window, ((sf::Vector2f(entity.Pos.x, entity.Pos.y))*Scale), entity.Rotation);
@@ -130,7 +142,12 @@ void RenderWorld::RenderTerrain(World &const world) {
 			OuterRoadSprite->Render(*window, ((sf::Vector2f(xp, yp))*Scale), 3.14);
 		}
 	}
-	HospitalSprite->Render(*window, ((sf::Vector2f(World::RoadWidth/4, World::RoadWidth/4))*Scale), -3.14/2);
+	constexpr float MaxDistance = ((World::BlockCount) * (World::RoadWidth + World::BlockSize)) + (3*World::RoadWidth) / 4;
+	constexpr float MinDistance = World::RoadWidth / 4;
+	CornerSprite->Render(*window, (sf::Vector2f(MaxDistance,MinDistance)*Scale), 0);
+	CornerSprite->Render(*window, (sf::Vector2f(MinDistance, MaxDistance)*Scale), 0);
+	CornerSprite->Render(*window, (sf::Vector2f(MaxDistance, MaxDistance)*Scale), 0);
+	HospitalSprite->Render(*window, (sf::Vector2f(MinDistance, MinDistance)*Scale), -3.14/2);
 }
 void RenderWorld::RenderMiniMap(World &const world) {
 	window->setView(MiniMap);

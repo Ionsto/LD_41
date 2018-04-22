@@ -87,8 +87,8 @@ void EntityCarAI::IncrementTarget() {
 	TargetNode->Target = false;
 	LastNode = TargetNode;
 	TargetNode = tempnode;
-	std::cout << "Prev node:" << LastNode->MyId.id << "\n";
-	std::cout << "Next node:" << TargetNode->MyId.id << "\n";
+	//std::cout << "Prev node:" << LastNode->MyId.id << "\n";
+	//std::cout << "Next node:" << TargetNode->MyId.id << "\n";
 	TargetNode->Target = true;
 	RandOffset.x = (rand() % 10) - 5;
 	RandOffset.y = (rand() % 10) - 5;
