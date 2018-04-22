@@ -82,3 +82,4 @@ LD_41/x64/Debug/vc141.idb
 *.pdb
 *.tlog
 *.idb
+*.bphys

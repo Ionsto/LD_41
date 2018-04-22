@@ -2,6 +2,8 @@
 
 #include <SFGUI\SFGUI.hpp>
 #include "GuiMainMenu.h"
+#include "TexturedSprite.h"
+#include <memory>
 class GuiManager
 {
 private:
@@ -9,10 +11,8 @@ private:
 	/*
 	Main menu
 	*/
-	std::shared_ptr<sfg::Button> ButtonStart;
-	std::shared_ptr<sfg::Button> ButtonHelp;
-	std::shared_ptr<sfg::Button> ButtonExit;
 public:
+	std::unique_ptr<TexturedSprite> MainMenu;
 	sfg::SFGUI sfgui;
 	std::unique_ptr<GuiTemplate> Menu;
 	GuiManager();

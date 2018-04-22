@@ -3,6 +3,7 @@
 GuiManager::GuiManager()
 {
 	Menu = std::make_unique<GuiMainMenu>();
+	MainMenu = std::make_unique<TexturedSprite>("./Resources/Images/MainMenu.png",sf::Vector2f(2,2));
 }
 
 

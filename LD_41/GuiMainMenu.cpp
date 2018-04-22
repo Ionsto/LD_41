@@ -2,6 +2,7 @@
 #include <SFGUI\Button.hpp>
 #include <SFGUI\ComboBox.hpp>
 #include <SFGUI\Label.hpp>
+#include <SFGUI\Frame.hpp>
 #include <functional>
 
 

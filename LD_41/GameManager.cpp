@@ -102,6 +102,11 @@ void GameManager::Render()
 		RenderEngine->Render(*WorldInstance.get());
 		break;
 	case Menu:
+		if (static_cast<GuiMainMenu*>(Gui->Menu.get())->State != GuiMainMenu::MoveState::Help) {
+			Gui->MainMenu->Render(Window, sf::Vector2f(500, 500), -3.14 / 2);
+		}
+		Gui->Render(Window);
+		break;
 	case End:
 		Gui->Render(Window);
 		break;

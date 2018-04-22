@@ -1,5 +1,6 @@
 #pragma once
 #include "GuiTemplate.h"
+#include <SFML\Graphics.hpp>
 class GuiMainMenu : public GuiTemplate
 {
 private:
