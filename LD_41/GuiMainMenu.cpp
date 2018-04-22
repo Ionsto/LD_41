@@ -75,9 +75,10 @@ void GuiMainMenu::MoveToHelpPosition() {
 	Hints.push_back(sfg::Label::Create("E pick up/deliver patient"));
 	Hints.push_back(sfg::Label::Create("Instructions:"));
 	Hints.push_back(sfg::Label::Create("Due to severe budget cuts, ambulance drivers are being drafted from former drifters"));
-	Hints.push_back(sfg::Label::Create("Your job is to pick up people from accidents (red circles) and deliver them to hospital (top left)"));
+	Hints.push_back(sfg::Label::Create("Your job is to pick up 5 people from accidents (red circles) and deliver them to hospital (top left)"));
 	Hints.push_back(sfg::Label::Create("Your aim is to do this as fast as possible"));
 	Hints.push_back(sfg::Label::Create("Hints:"));
+	Hints.push_back(sfg::Label::Create("Make sure you are still when picking up & depositing patients"));
 	Hints.push_back(sfg::Label::Create("Turning is hard, you don't have much traction - but a scandinavian flick will work"));
 	int i = 0;
 	for (auto & hint : Hints) {

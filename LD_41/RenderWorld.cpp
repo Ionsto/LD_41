@@ -30,7 +30,7 @@ void RenderWorld::InitRes(){
 	OuterRoadSprite = std::make_unique<TexturedSprite>("./Resources/Images/OuterRoad.png", sf::Vector2f((World::BlockSize + World::RoadWidth)/900.0f, 0.5*World::RoadWidth / 200.0f)*Scale);
 	HospitalSprite = std::make_unique<TexturedSprite>("./Resources/Images/Hospital.png", sf::Vector2f(World::RoadWidth / 2, World::RoadWidth / 2)*(Scale / 1800.0f));
 	CornerSprite = std::make_unique<TexturedSprite>("./Resources/Images/Corner.png", sf::Vector2f(World::RoadWidth / 2, World::RoadWidth / 2)*(Scale / 1800.0f));
-	for (int i = 0; i < 2; ++i) {
+	for (int i = 0; i < 3; ++i) {
 		Buildings.emplace_back(std::make_unique<TexturedSprite>("./Resources/Images/Building" + std::to_string(i) + ".png", sf::Vector2f(Scale * 10.0 / 1800.0, Scale * 10.0 / 1800.0)));
 	}
 	for (int i = 0; i < 3; ++i) {
