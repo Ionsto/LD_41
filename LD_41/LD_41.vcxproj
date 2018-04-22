@@ -91,6 +91,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <AdditionalDependencies>sfml-system-d.lib;sfml-graphics-d.lib;sfml-window-d.lib;Box2D.lib;sfgui-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -118,6 +119,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -127,11 +129,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="EntityAmbulance.cpp" />
+    <ClCompile Include="EntityBuilding.cpp" />
     <ClCompile Include="EntityCar.cpp" />
+    <ClCompile Include="EntityCarAI.cpp" />
+    <ClCompile Include="EntityEvent.cpp" />
     <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="GuiEndGame.cpp" />
+    <ClCompile Include="GuiGame.cpp" />
     <ClCompile Include="GuiMainMenu.cpp" />
     <ClCompile Include="GuiManager.cpp" />
     <ClCompile Include="GuiTemplate.cpp" />
+    <ClCompile Include="StaticElements.cpp" />
     <ClCompile Include="KeyState.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MouseState.cpp" />
@@ -141,14 +150,22 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="EntityAmbulance.h" />
+    <ClInclude Include="EntityBuilding.h" />
     <ClInclude Include="EntityCar.h" />
+    <ClInclude Include="EntityCarAI.h" />
+    <ClInclude Include="EntityEvent.h" />
     <ClInclude Include="GameManager.h" />
+    <ClInclude Include="GuiEndGame.h" />
+    <ClInclude Include="GuiGame.h" />
     <ClInclude Include="GuiMainMenu.h" />
     <ClInclude Include="GuiManager.h" />
     <ClInclude Include="GuiTemplate.h" />
+    <ClInclude Include="StaticElements.h" />
     <ClInclude Include="KeyState.h" />
     <ClInclude Include="MouseState.h" />
     <ClInclude Include="RenderWorld.h" />
+    <ClInclude Include="RoadSystem.h" />
     <ClInclude Include="TexturedSprite.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>

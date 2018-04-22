@@ -20,6 +20,7 @@ public:
 		Person,
 		Accident,
 		Car,
+		Building,
 		Ambulence
 	}Type;
 	//Probably should use a class ID -> no weird issues
@@ -32,6 +33,6 @@ public:
 	virtual ~Entity();
 	virtual void UpdatePhysics();
 	virtual void Update();
-	void SetPosition(b2Vec2 pos);
+	void SetPosition(float32 x,float32 y);
 };
 

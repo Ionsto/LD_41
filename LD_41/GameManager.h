@@ -21,7 +21,7 @@ private:
 	enum GameState {
 		Menu,
 		Game,
-		Paused
+		End
 	} State;
 public:
 	sf::RenderWindow Window;

@@ -20,6 +20,6 @@ public:
 	//Probably stuff in some control systems
 	void Update(float Dt);
 	void UpdateEvent(sf::Event & const event);
-	void Render(sf::Window & const window);
+	void Render(sf::RenderWindow & const window);
 };
 

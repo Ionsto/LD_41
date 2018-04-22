@@ -19,7 +19,7 @@ protected:
 public:
 	sfg::Desktop GuiDesktop;
 	GuiTemplate();
-	~GuiTemplate();
+	virtual ~GuiTemplate();
 	virtual void Update(float Dt);
 	virtual void UpdateEvent(sf::Event & const event);
 	//virtual void Render(sf::Window & const window);

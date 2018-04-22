@@ -11,13 +11,21 @@ GuiManager::~GuiManager()
 }
 void GuiManager::Update(float dt)
 {
-	Menu->Update(dt);
+	if (Menu) {
+		Menu->Update(dt);
+	}
 }
 void GuiManager::UpdateEvent(sf::Event & const event)
 {
-	Menu->UpdateEvent(event);
+	if (Menu) {
+		Menu->UpdateEvent(event);
+	}
 }
-void GuiManager::Render(sf::Window & const window)
+void GuiManager::Render(sf::RenderWindow & const window)
 {
-	sfgui.Display(window);
+	if (Menu) {
+		window.setView(window.getDefaultView());
+		window.resetGLStates();
+		sfgui.Display(window);
+	}
 }

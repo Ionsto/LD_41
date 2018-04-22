@@ -75,6 +75,27 @@
     <ClCompile Include="TexturedSprite.cpp">
       <Filter>Source Files\System\Render</Filter>
     </ClCompile>
+    <ClCompile Include="EntityAmbulance.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityBuilding.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityCarAI.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityEvent.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticElements.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiGame.cpp">
+      <Filter>Source Files\System\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiEndGame.cpp">
+      <Filter>Source Files\System\GUI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entity.h">
@@ -109,6 +130,30 @@
     </ClInclude>
     <ClInclude Include="RenderWorld.h">
       <Filter>Header Files\System\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityAmbulance.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="RoadSystem.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityCarAI.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityBuilding.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityEvent.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticElements.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiGame.h">
+      <Filter>Header Files\System\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiEndGame.h">
+      <Filter>Header Files\System\GUI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

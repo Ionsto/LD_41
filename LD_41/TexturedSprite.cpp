@@ -5,14 +5,14 @@
 TexturedSprite::TexturedSprite()
 {
 }
-TexturedSprite::TexturedSprite(std::string Location)
+TexturedSprite::TexturedSprite(std::string Location,sf::Vector2f size)
 {
 	Texture = sf::Texture();
 	Texture.loadFromFile(Location);
 	Sprite = sf::Sprite();
 	Sprite.setTexture(Texture, true);
-	Sprite.setScale(sf::Vector2f(1.0 / 18.0, 1.0 / 18.0));
 	Sprite.setOrigin(Texture.getSize().x / 2, Texture.getSize().y / 2);
+	Sprite.setScale(size);
 }
 
 
